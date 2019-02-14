@@ -10,9 +10,7 @@
 nohup bowtie-build GENOME.fa GENOME.fa &
 ## (二）、将Reads.fa比对到GENOME.fa上，只能比对到正链，且匹配到基因组不多于20个不同位置，允许有1个错配（参数见下）
 
-1
-
-bowtie -f -a -m 20 -v 1 --al Reads_aligned --un Reads_unaligned --norc GENOME.fa Reads.fa Reads.bwt 2> log
+> bowtie -f -a -m 20 -v 1 --al Reads_aligned --un Reads_unaligned --norc GENOME.fa Reads.fa Reads.bwt 2> log
 
 注：
 -f 指定query文件为fasta格式
