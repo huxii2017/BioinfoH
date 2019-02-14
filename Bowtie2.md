@@ -2,14 +2,14 @@
 
 常见的短序列比对工具有很多，如fasta、blast、bowtie、shrimp、soap等。每个工具都有其自身的优点，但同时也具备了一些缺点。权衡利弊，我选择bowtie作为主要的短序列比对工具。它速度很快，比对结果也容易理解。
 现在举个例子来探讨bowtie的使用方法：现在有GENOME.fa、高通量测序数据Reads.fa，我们希望将Reads.fa比对到基因组GENOME.fa上。
-##（一）、对Reference文件(GENOME.fa)建库
+## (一）、对Reference文件(GENOME.fa)建库
 
 1、bowtie-build GENOME.fa GENOME.fa
 
 建库步骤可能需要1h甚至几个小时，建议在后台执行：
 nohup bowtie-build GENOME.fa GENOME.fa &
 
-## （二）、将Reads.fa比对到GENOME.fa上，只能比对到正链，且匹配到基因组不多于20个不同位置，允许有1个错配（参数见下）
+##（二）、将Reads.fa比对到GENOME.fa上，只能比对到正链，且匹配到基因组不多于20个不同位置，允许有1个错配（参数见下）
 
 1
 
