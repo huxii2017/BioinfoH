@@ -4,12 +4,11 @@
 现在举个例子来探讨bowtie的使用方法：现在有GENOME.fa、高通量测序数据Reads.fa，我们希望将Reads.fa比对到基因组GENOME.fa上。
 ## (一）、对Reference文件(GENOME.fa)建库
 
-1、bowtie-build GENOME.fa GENOME.fa
+> bowtie-build GENOME.fa GENOME.fa
 
 建库步骤可能需要1h甚至几个小时，建议在后台执行：
 nohup bowtie-build GENOME.fa GENOME.fa &
-
-##（二）、将Reads.fa比对到GENOME.fa上，只能比对到正链，且匹配到基因组不多于20个不同位置，允许有1个错配（参数见下）
+## (二）、将Reads.fa比对到GENOME.fa上，只能比对到正链，且匹配到基因组不多于20个不同位置，允许有1个错配（参数见下）
 
 1
 
@@ -25,7 +24,7 @@ bowtie -f -a -m 20 -v 1 --al Reads_aligned --un Reads_unaligned --norc GENOME.fa
 --norc 不输出匹配到负链的结果；如果不想输出比对到正链的结果，则用"--nofw"。不指定该选项则正负链结果都输出
 后面依次写上GENOME索引文件，Reads文件，输出结果文件Reads.bwt，日志文件log。
 --best、--strata参考 https://www.plob.org/article/932.html
-（三）、bowtie输出结果的说明
+## (三）、bowtie输出结果的说明
 
 1
 2
