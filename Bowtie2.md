@@ -24,7 +24,7 @@ nohup bowtie-build GENOME.fa GENOME.fa &
 --best、--strata参考 https://www.plob.org/article/932.html
 ## (三）、bowtie输出结果的说明
 
- sample001_x75 + Chr1 12453 ATCGGCCAATTACGGACTTAA IIIIIIIIIIIIIIIIIIIII 4 9:G>T 
+ sample001_x75 + Chr1 12453 ATCGGCCAATTACGGACTTAA IIIIIIIIIIIIIIIIIIIII 4 9:G>T <br>
  1           2  3      4            5                6                  7   8 
     
 
