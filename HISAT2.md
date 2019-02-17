@@ -34,6 +34,8 @@ parallel -j 8 < hisat2.sh #平行运行8行命令，开始运行，然后按下c
 screen -ls #查看进程是否attach
 screen -r hisat2 #恢复hisat2运行状态
 top或者htop #查看进程是否开始运行
+```
+
 
 
 ## step3 sam to bam
