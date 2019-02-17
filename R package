@@ -1,0 +1,3 @@
+#安装bioconducter的包方法如下。例如airway（数据包）
+source("http://bioconductor.org/biocLite.R")
+biocLite("airway")
