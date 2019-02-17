@@ -9,7 +9,8 @@
 
 ## step1 建立index
 
-```hisat2_extract_exons.py 1.gtf > 1.exons
+```
+hisat2_extract_exons.py 1.gtf > 1.exons
 #调用脚本hisat_extract_exons.py,创建exons比对源
 
 hisat2_extract_splice_sites.py 1.gtf > 1.ss
@@ -21,7 +22,8 @@ hisat2-build -p 4 1.fa --ss 1.ss --exon 1.exons Index_name
 ```
 ## step2 mapping（output file.sam）
 如果有多个文件需要处理，可以将mapping的命令批量写在一个.txt或者.sh文件中，然后用scrren后台挂起运行，例如有4个单端测序的fastaq文件需要mapping：
-``` vi hisat2.sh 
+``` 
+vi hisat2.sh 
 #新建并打开一个shell文本编辑器,按a建进入insert编辑模式，写入以下命令：
 hisat2 -x Index_name -U 1.fastq -S 1.sam 2>log
 hisat2 -x Index_name -U 2.fastq -S 2.sam 2>log
@@ -40,7 +42,8 @@ top或者htop #查看进程是否开始运行
 
 ## step3 sam to bam
 
-```samtools sort -O bam -@ 5 -o file.bam file.sam
+```
+samtools sort -O bam -@ 5 -o file.bam file.sam
 #此处是将sam格式的文件进行转换，实质是进行一定程度的压缩，是文件变小
 ```
 
