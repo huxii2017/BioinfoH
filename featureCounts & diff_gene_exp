@@ -8,7 +8,7 @@ featureCounts -T 6 -s 0 -p -t exon -g gene_id -a 1.gtf -o featureCounts.txt 1.ba
 
 
 
-
+以下操作均在R中进行
 
 #清空变量&data
 rm(list=ls())
