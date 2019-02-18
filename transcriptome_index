@@ -1,0 +1,26 @@
+ps：非常感谢bingbing师兄帮助我完成这部分建立index的办法。
+
+在实际情况中，我们可能会碰见两种版本的基因组序列及gff3的基因注释文件，往往我们会发现两种注释版不同，基因组序列也完全相同，可能是新版本发现了新的基因
+但是注释不完整，所以我们需要将两个版本的基因序列信息合并，生成完整的转录本index。
+
+实现的过程，举个例子如下所示。
+现有某物种H的基因组版本，H_v1.fa和H_v2.fa,同时对应的注释文件分别是H_v1.gff3，H_v2.gff3，合并方法如下：
+#step1
+gffread -T -o H_v1.gtf H_v1.gff3 #转换注释文件格式
+gffread -T -o H_v2.gtf H_v2.gff3 #转换注释文件格式
+
+#step2
+samtools faidx H_v1.fa #建立fasta index
+samtools faidx H_v2.fa
+
+#step3 
+cut -f1,2 H_v1.fa > genome_H_v1.size #提前两列信息
+cut -f1,2 H_v2.fa > genome_H_v2.size
+
+#step4 
+gffread -g H_v1.fa -s genome_H_v1.size -W -M -F -G -A -O -E -w transcriptome_H_v1.fa -d transcriptome.collapsed.info H_v1.gtf #利用gtf提取转录本fasta文件（基因序列信息）
+gffread -g H_v2.fa -s genome_H_v2.size -W -M -F -G -A -O -E -w transcriptome_H_v2.fa -d transcriptome.collapsed.info H_v2.gtf
+
+#step5
+samtools faidx transcriptome_H_v1.fa #建立转录本index
+samtools faidx transcriptome_H_v2.fa
