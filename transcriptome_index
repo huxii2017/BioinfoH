@@ -24,3 +24,7 @@ gffread -g H_v2.fa -s genome_H_v2.size -W -M -F -G -A -O -E -w transcriptome_H_v
 #step5
 samtools faidx transcriptome_H_v1.fa #建立转录本index
 samtools faidx transcriptome_H_v2.fa
+
+#step6
+cat transcriptome_H_v1.fa.fai transcriptome_H_v2.fa.fai transcriptome_H_v2.fa.fai | sort | uniq -u #对索引进行处理
+awk 'BEGIN{FS="\t"}FNR==NR{a[$1]=1;next}{if(!($1 in a)) print $1}' transcriptome_H_v2.fa.fai transcriptome_H_v1.fa.fai >output.fai2 #对索引进行处理
