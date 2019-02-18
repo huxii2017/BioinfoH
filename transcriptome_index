@@ -43,7 +43,7 @@ genePredToGtf file transcriptome.genePred transcriptome.gtf -source=transcriptom
 
 
 
-
+sed 's/\(^>[^\.]\+\)\.[0-9]\+/\1/g' cucumber_transcriptome_201809.fa | grep '^>' > transcriptome_V3.fa
 
 
 
