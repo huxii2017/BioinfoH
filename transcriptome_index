@@ -17,7 +17,7 @@ samtools faidx H_v2.fa
 cut -f1,2 H_v1.fa > genome_H_v1.size #提前两列信息
 cut -f1,2 H_v2.fa > genome_H_v2.size
 
-#step4 
+#step4 ##得到转录本fasta
 gffread -g H_v1.fa -s genome_H_v1.size -W -M -F -G -A -O -E -w transcriptome_H_v1.fa -d transcriptome.collapsed.info H_v1.gtf #利用gtf提取转录本fasta文件（基因序列信息）
 gffread -g H_v2.fa -s genome_H_v2.size -W -M -F -G -A -O -E -w transcriptome_H_v2.fa -d transcriptome.collapsed.info H_v2.gtf
 
@@ -33,6 +33,22 @@ awk 'BEGIN{FS="\t"}FNR==NR{a[$1]=1;next}{if(!($1 in a)) print $1}' transcriptome
 
 
 
-##建立merge_gtf
-cat H_v1.fa H_v2.fa >output.fa
+##建立merge_gtf ##得到转录本-gtf
+cat transcriptome_H_v1.fa transcriptome_H_v2.fa > transcriptome.fa #基于此建立mapping_index
+samtools faidx transcriptome.fa #建立fasta索引
+awk 'BEGIN{OFS="\t";FS="\t"}{print $1,0,$2,$1,0,"+"}' transcriptome.fa.fai > transcriptome.bed
+bedToGenePred transcriptome.bed transcriptome.genePred
+genePredToGtf file transcriptome.genePred transcriptome.gtf -source=transcriptome  #转gtf文件（用于featureCounts）
+
+
+
+
+
+
+
+
+
+
+
+
 
