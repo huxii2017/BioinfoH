@@ -35,11 +35,13 @@ bowtie2 -p 4 --sensitive --no-unal --un {output.no_rRNA} -x {params.index} {inpu
 ID:bowtie2      PN:bowtie2      VN:2.2.9        CL:"/Share/home/wangsiqi/apps/bowtie2-2.2.9/bowtie2-align-s --wrapper basi
 c-0 -p 4 --sensitive --norc -x /Share/home/wangsiqi/projects/00.reference/Genome/human_hg38/rsem.index/miRNA 02.mapping/smart_1/remove_rRNA/smart_1.no_rRNA.fastq --passthrough" #from smart_1.miRNA.sam
                 
-bowtie2 -p {params.cpu} --sensitive --norc --no-unal --un {output.unAlign} -x {params.index} {input.fastq} -S {output.sam} rsem-tbam2gbam {params.index} {output.sam} {output.tbam2gbam}
+bowtie2 -p {params.cpu} --sensitive --norc --no-unal --un {output.unAlign} -x {params.index} {input.fastq} -S {output.sam} 
+              rsem-tbam2gbam {params.index} {output.sam} {output.tbam2gbam}
 
 ## map3_piRNA
 
-bowtie2 -p {params.cpu} --sensitive --norc --no-unal --un {output.unAlign} -x {params.index} {input.fastq} -S {output.sam} rsem-tbam2gbam {params.index} {output.sam} {output.tbam2gbam}
+bowtie2 -p {params.cpu} --sensitive --norc --no-unal --un {output.unAlign} -x {params.index} {input.fastq} -S {output.sam} 
+               rsem-tbam2gbam {params.index} {output.sam} {output.tbam2gbam}
 
 ## map4_Y_RNA
 
