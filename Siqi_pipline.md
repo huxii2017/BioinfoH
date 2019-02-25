@@ -25,7 +25,10 @@ Reads written (passing filters):    20,831,360 (76.0%)
 Total basepairs processed: 1,502,671,443 bp
 Total written (filtered):  1,253,728,634 bp (83.4%)
 
-# step2 Mapping》》脚本文件：/BioII/lulab_b/wangsiqi/exRNA/exRNA-panel/s-smart/02.181022-CRC/Snakefile.bk 
+# step2 Mapping
+》》脚本文件：/BioII/lulab_b/wangsiqi/exRNA/exRNA-panel/s-smart/02.181022-CRC/Snakefile.bk 
+》〉Share index path：/BioII/lulab_b/shared/genomes/human_hg38/index/transcriptome_rsem_bowtie2
+rRNA ,miRNA ,piRNA ,Y_RNA ,srpRNA ,tRNA ,
 ## map1_remove_rRNA
 ID:bowtie2      PN:bowtie2      VN:2.2.9        CL:"/Share/home/wangsiqi/apps/bowtie2-2.2.9/bowtie2-align-s --wrapper basic-0 -p 4 --sensitive -x /Share/home/wangsiqi/projects/00.reference/Genome/human_hg38/rsem.index/rRNA 01.preprocess/smart_1.cutadapt_2.fastq --passthrough" #from smart_1.rRNA.sam
 
