@@ -25,3 +25,6 @@ Reads written (passing filters):    20,831,360 (76.0%)
 Total basepairs processed: 1,502,671,443 bp
 Total written (filtered):  1,253,728,634 bp (83.4%)
 
+# step2 Mapping
+## mapping rRNA
+ID:bowtie2      PN:bowtie2      VN:2.2.9        CL:"/Share/home/wangsiqi/apps/bowtie2-2.2.9/bowtie2-align-s --wrapper basic-0 -p 4 --sensitive -x /Share/home/wangsiqi/projects/00.reference/Genome/human_hg38/rsem.index/rRNA 01.preprocess/smart_1.cutadapt_2.fastq --passthrough"
