@@ -25,6 +25,10 @@ Reads written (passing filters):    20,831,360 (76.0%)
 Total basepairs processed: 1,502,671,443 bp
 Total written (filtered):  1,253,728,634 bp (83.4%)
 
+## NEB cutadapt
+cutadapt -u -60 -a AGATCGGAAGAGCACACGTCTGAACTCCAGTCAC -m 16 --trim-n -o /dev/fd/63 00.rawdata/crc-2382711_T4PNK_1.fq.gz
+
+
 # step2 Mapping
 》》脚本文件：/BioII/lulab_b/wangsiqi/exRNA/exRNA-panel/s-smart/02.181022-CRC/Snakefile.bk 
 》〉Share index path：/BioII/lulab_b/shared/genomes/human_hg38/index/transcriptome_rsem_bowtie2
