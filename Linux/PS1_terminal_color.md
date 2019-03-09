@@ -12,6 +12,7 @@ PS1="\[\e[32m\][\u\[\e[36m\]@\[\e[32m\]\h \W\[\e[32m\]]\\$\[\e[0m\] \[\e[31m\]\d
 source ~/.bashrc
 ```
 显示效果如下：<br/>
+
 ![PS1.png](BioinfoH/Linux/fig/PS1.png)
 
 
