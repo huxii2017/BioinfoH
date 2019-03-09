@@ -17,7 +17,6 @@ source ~/.bashrc
 
 
 <br/>
-****
 
 ## PS1常用参数说明：
 
