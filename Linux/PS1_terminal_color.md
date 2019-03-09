@@ -16,7 +16,7 @@ source ~/.bashrc
 ![PS1.png](BioinfoH/Linux/fig/PS1.png)
 
 
-<br/>
+
 
 ## PS1常用参数说明：
 
