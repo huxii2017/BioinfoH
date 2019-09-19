@@ -1,6 +1,0 @@
-eg.install stringtie
-
-#step1_perpare app source package#
-git clone https://github.com/gpertea/stringtie
-
-#step2_
