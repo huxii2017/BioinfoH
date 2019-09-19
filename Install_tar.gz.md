@@ -20,7 +20,7 @@ make
 #step6.
 make install
 
-#step7.add a PATH to ~/.bash_profile
+#step7. add a PATH to {~/.bash_profile} 
 export PATH=~/install/screen-4.6.2:$PATH
 
 #step8. source
