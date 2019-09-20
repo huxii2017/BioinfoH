@@ -1,9 +1,9 @@
 
 
 ### featureCounts命令（可以同时counts多个bam文件，并将结果写入一个txt文件，例如物种1的全基因组信息注释文件为1.gtf；从mapping步骤获得4个bam文件，则命令为如下所示）
-`
+``
 featureCounts -T 6 -s 0 -p -t exon -g gene_id -a 1.gtf -o featureCounts.txt 1.bam 2.bam 3.bam 4.bam
-`
+``
 注意：参数-s主要是只测序文库是否具有链特异性，有三个选项，分别是0，1，2，与构建文库的方式有关。一般情况下，随机引物反转录扩增的构建文库方法参数为0.
 详情可见http://onetipperday.sterding.com/2012/07/how-to-tell-which-library-type-to-use.html
 
