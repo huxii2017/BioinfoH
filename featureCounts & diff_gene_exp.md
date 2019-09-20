@@ -1,10 +1,13 @@
 
 
-### featureCounts命令（可以同时counts多个bam文件，并将结果写入一个txt文件，例如物种1的全基因组信息注释文件为1.gtf；从mapping步骤获得4个bam文件，则命令为如下所示）
-``
+### featureCounts命令（可以同时counts多个bam文件，并将结果写入一个txt文件，例如物种1的全基因组信息注释文件为1.gtf；从mapping步骤获得4个bam文件，则命令为如下所示）  
+
+```
 featureCounts -T 6 -s 0 -p -t exon -g gene_id -a 1.gtf -o featureCounts.txt 1.bam 2.bam 3.bam 4.bam
-``
-注意：参数-s主要是只测序文库是否具有链特异性，有三个选项，分别是0，1，2，与构建文库的方式有关。一般情况下，随机引物反转录扩增的构建文库方法参数为0.
+```  
+
+注意：参数-s主要是只测序文库是否具有链特异性，有三个选项，分别是0，1，2，与构建文库的方式有关。一般情况下，随机引物反转录扩增的构建文库方法参数为0.  
+
 详情可见http://onetipperday.sterding.com/2012/07/how-to-tell-which-library-type-to-use.html
 
 
@@ -14,19 +17,22 @@ featureCounts -T 6 -s 0 -p -t exon -g gene_id -a 1.gtf -o featureCounts.txt 1.ba
 
 以下操作均在R中进行
 
-### 清空变量&data
-`
+### 清空变量&data  
+
+```R
 rm(list=ls())
-`
-## step1 edgR 数据导入
-`
+```
+## step1 edgR 数据导入  
+
+```R
 library(edgeR)
 setwd("~/BioII/lulab_b/huxi/mapping1")
 mydata <- read.table("al_counts.txt",header = T,quote = '\t',skip = 1)
 sampleNames <- c("CK_0_1","CK_0_2","ND_0.5_1","ND_0.5_2","ND_1_1","ND_1_2","ND_3_1","ND_3_2","ND_6_1","ND_6_2","ND_12_1","ND_12_2")
 names(mydata)[7:18] <- sampleNames
 head(mydata)
-`
+```  
+
 
 ## step2 Counts矩阵
 `
