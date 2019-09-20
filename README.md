@@ -3,7 +3,7 @@ Learn a little bit of knowledge every day, improve every day
 
 ### 建立软连接 $ln -s {source file} {aim file} eg.
 ` 
-lh -s /lustre/huxi ~ 
+ln -s /lustre/huxi ~ 
 `
 
 ### 设置文件夹权限 $chmod abc {files}
