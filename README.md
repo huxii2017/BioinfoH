@@ -7,6 +7,11 @@ Learn a little bit of knowledge every day, improve every day
 ln -s /lustre/huxi ~ 
 
 ```
+* 删除软连接
+```
+cd ~
+rm huxi
+```
 
 ### 设置文件夹权限 $chmod abc {files}  
 
