@@ -34,7 +34,11 @@ source ~/.bash_profile
 
 #step9. .screenrc
 touch ~/.screenrc
+
+
 ## vim & insert follows context
+==================================insert==========================================
+
 #### use .bashrc in screen
 shell -$SHELL
 # ------------------------------------------------------------------------------
@@ -88,3 +92,4 @@ hardstatus string "%h%? users: %u%?"
 hardstatus alwayslastline "%{=b}%{b}%-w%{.BW}%10>%n*%t%{-}%+w%< %=%{kG}%C%A , %Y-%m-%d"
 #标题栏
 
+======================================insert=========================================
