@@ -21,6 +21,15 @@ rwx:read=4,write=2,eXecute=1 eg.
 chmod 744 /lustre/huxi 
 ```
 
+### 删除空文件(./) 
+```
+find . -name "*" -type f -size 0c | xargs -n 1 rm -f
+```
+
+### 删除空文件夹
+```
+find -type d -empty | xargs -n 1 rm -rf
+```
 
 ### .bash_profile or .bashrc  
 
