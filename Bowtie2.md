@@ -13,15 +13,15 @@ nohup bowtie-build GENOME.fa GENOME.fa &
 ``` bowtie -f -a -m 20 -v 1 --al Reads_aligned --un Reads_unaligned --norc GENOME.fa Reads.fa Reads.bwt 2> log ```
 
 注：
--f 指定query文件为fasta格式
--a 保留所有比对结果
--m 指定最大比对到基因组的次数
--v 允许最大错配数，为[0-2]
---al 能map到GENOME的reads，fasta格式
---un 不能map到GENOME的reads，fasta格式
---norc 不输出匹配到负链的结果；如果不想输出比对到正链的结果，则用"--nofw"。不指定该选项则正负链结果都输出
+* -f 指定query文件为fasta格式 
+* -a 保留所有比对结果
+* -m 指定最大比对到基因组的次数
+* -v 允许最大错配数，为[0-2]
+* --al 能map到GENOME的reads，fasta格式
+* --un 不能map到GENOME的reads，fasta格式
+* --norc 不输出匹配到负链的结果；如果不想输出比对到正链的结果，则用"--nofw"。不指定该选项则正负链结果都输出
 后面依次写上GENOME索引文件，Reads文件，输出结果文件Reads.bwt，日志文件log。
---best、--strata参考 https://www.plob.org/article/932.html
+* --best、--strata参考 https://www.plob.org/article/932.html
 ## (三）、bowtie输出结果的说明
 
  |sample001_x75| + | Chr1 | 12453 |ATCGGCCAATTACGGACTTAA | IIIIIIIIIIIIIIIIIIIII |4| 9:G>T|
