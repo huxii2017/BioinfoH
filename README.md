@@ -31,6 +31,12 @@ find . -name "*" -type f -size 0c | xargs -n 1 rm -f
 find -type d -empty | xargs -n 1 rm -rf
 ```
 
+### 查看路径文件大小
+```
+du -h --max-depth=1 /path/
+```
+
+
 ### .bash_profile or .bashrc  
 
 ``` 
